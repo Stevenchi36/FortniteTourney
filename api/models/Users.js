@@ -9,6 +9,34 @@ module.exports = {
 
   attributes: {
 
+    username: {
+      type: 'string',
+      unique: true,
+      size: 20
+    },
+    email: {
+      type: 'string',
+      unique: true
+    },
+    password: {
+      type: 'string'
+    },
+    pc: {
+      type: 'string',
+      unique: true
+    },
+    ps4: {
+      type: 'string',
+      unique: true
+    },
+    xb1: {
+      type: 'string',
+      unique: true
+    },
+    points: {
+      type: 'integer'
+    }
+
   }
 };
 
