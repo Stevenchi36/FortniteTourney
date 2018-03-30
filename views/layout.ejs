@@ -31,12 +31,37 @@
         <a href="#"><li class="menu-item item item-2">Leaderboards</li></a>
       </ul>
     </div>
-    <a href="#"><div class="login">Login</div></a>
+    <div class="login" id="loginBTN">Login</div>
   </nav>
+  <div class="login-modal-container" id="modal">
+    <div class="modal-content">
+      <h2>Login</h2>
+      <form method="post" action="/loginUser">
+        <input type="text" name="username" id="usernameInput">
+        <input type="password" name="password" id="passwordInput">
+        <input type="submit" value="Login">
+      </form>
+    </div>
+  </div>
   <%- body %>
 
   <!--SCRIPTS-->
   <script src="/js/dependencies/sails.io.js"></script>
   <!--SCRIPTS END-->
+  <script>
+    var modal = document.getElementById("modal");
+    var btn = document.getElementById("loginBTN");
+
+    // Open Modal
+    btn.onclick = function(){
+      modal.style.display = "flex";
+    }
+    // Close Modal
+    window.onclick = function(event){
+      if(event.target == modal){
+        modal.style.display = "none";
+      }
+    }
+  </script>
   </body>
 </html>
