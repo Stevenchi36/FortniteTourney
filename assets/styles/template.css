@@ -1,0 +1,112 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #F5F0F2;
+}
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #17468A;
+    color: white;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+img {
+    display: block;
+}
+/* Dropdown */
+.button-list {
+    display: flex;
+    height: 100%;
+    color: white;
+}
+.menu-item {
+    /* padding: 0 10px; */
+    /* display: block; */
+    position: relative;
+    height: 50px;
+    color: white;
+}
+.menu-item {
+    border-left: 1px solid black;
+}
+.item {
+    background-color: #17468A;
+    padding: 0px 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    padding: 0px 10px;
+    color: white;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+.login:hover {
+    background-color: #4C8DCA;
+}
+.item-link {
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.sub-item {
+    min-width: 150px;
+    margin-left: auto;
+    padding: 15px 10px;
+    background-color: #17468A;
+    color: white;
+}
+.item-2 {
+    border-right: 1px solid black;
+}
+.dropdown-container {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    border: 1px solid black;
+    visibility: hidden;
+    opacity: 0;
+    transition-property: opacity, visibility;
+    transition-duration: .3s, 0s;
+}
+.sub-link-2 {
+    border-top: 1px solid black;
+}
+.menu-item:hover .dropdown-container {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+}
+.sub-holder:hover {
+    background-color: #4C8DCA;
+}
+.sub-item:hover {
+    background-color: #4C8DCA;    
+}
+.menu-item:hover {
+    background-color: #4C8DCA;
+}
+.header {
+    background-image: url("http://via.placeholder.com/1000x250/313131/ffffff");
+    background-size: cover;
+    background-position: center;
+    height: 250px;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+}
+.header h1 {
+    margin: 0 0 20px 20px;
+}
