@@ -46,6 +46,6 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
   '/register': { view: 'register'},
-  '/addUser': 'UserController.registerUser',
-  '/loginUser': 'UserController.loginUser'
+  '/addUser': 'UsersController.registerUser',
+  '/loginUser': 'UsersController.loginUser'
 };
