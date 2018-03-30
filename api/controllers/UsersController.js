@@ -6,6 +6,58 @@
  */
 
 module.exports = {
-	
+    // Register users into DB
+	registerUser: function(req,res){
+        // retrieve inputs
+        var username = req.body.username;
+        var pw = req.body.password;
+        var email = req.body.email;
+        // bcrypt
+        var bcrypt = require('bcrypt');
+        const saltRounds = 10;
+        // Encrypt PW
+        bcrypt.genSalt(saltRounds, function(err, salt){
+            bcrypt.hash(pw, salt, function(err, hash){
+                // Put user info into database
+                if(res){
+                    Users.create({username:username, password:hash, email:email}).exec(function(err){
+                        if(err){
+                            res.send(500, 'Database Error');
+                        }
+                        // Redirect if successful
+                        res.redirect('/');
+                    });
+                }
+            });
+        });
+    },
+    // Login and create session variable
+    loginUser: function(req,res){
+        // Retrieve inputs
+        var username = req.body.username;
+        var pw = req.body.password;
+        // bcrypt compare
+        var bcrypt = require('bcrypt');
+        Users.findOne({username:username}).exec(function(err, resUser){
+            // console.log(resUser);
+            if(err){
+                res.redirect(login);
+            }
+            else{
+                bcrypt.compare(pw, resUser.password, function(err, resComp){
+                    // If passwords match, set session to username
+                    if(resComp){
+                        req.session.ID = resUser.id;
+                        req.session.userName = resUser.username;
+                        console.log(resUser.id);
+                        res.redirect('/');
+                    }
+                    else{
+                        console.log("Password mismatch");
+                    }
+                });
+            }
+        });
+    }
 };
 
