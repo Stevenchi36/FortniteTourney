@@ -20,6 +20,10 @@ module.exports = {
     maxTeams: {
       type: 'number',
       defaultsto: 32
+    },
+    completed: {
+      type: 'boolean',
+      defaultsto: false
     }
   }
 };
