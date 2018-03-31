@@ -48,5 +48,6 @@ module.exports.routes = {
   '/register': { view: 'register'},
   '/addUser': 'UsersController.registerUser',
   '/loginUser': 'UsersController.loginUser',
-  '/logout': 'UsersController.logout'
+  '/logout': 'UsersController.logout',
+  '/getUpcoming': 'TournamentsController.getUpcomingTournaments'
 };

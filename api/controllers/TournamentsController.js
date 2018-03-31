@@ -6,6 +6,13 @@
  */
 
 module.exports = {
-	
+	getUpcomingTournaments: function(req,res){
+        Tournaments.find({completed:false}).exec(function(err, tournaments){
+            if(err){
+                res.send(500, 'Database Error');
+            }
+            res.json(tournaments);
+        })
+    }
 };
 
