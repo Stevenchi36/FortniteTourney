@@ -167,3 +167,18 @@ img {
     text-decoration: underline;
     color: #17468A;
 }
+.homepage .tournaments-list {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+.homepage .tournaments-list .tournament-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: lightgray;
+}
+.homepage .tournaments-list .tournament-container * {
+    margin-bottom: 5px;
+}

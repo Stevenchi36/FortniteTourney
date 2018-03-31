@@ -1,5 +1,38 @@
+<script
+  src="https://code.jquery.com/jquery-3.3.1.min.js"
+  integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+  crossorigin="anonymous">
+</script>
 <div class="homepage">
   <div class="header">
     <h1>Fortnite Tournaments</h1>
   </div>
+  <div class="tournaments-list" id="tournaments-list">
+    <template v-for="tournament in tournaments">
+      <div class="tournament-container">
+          <img src="http://via.placeholder.com/250x250/606060/ffffff">
+          <h3 class="tournament-platform">{{ tournament.platform }}</h3>
+          <p class="tournament-date">{{ tournament.time }}</p>
+          <button class="view-tournament">View</button>
+          <button class="join-tournament">Join</button>
+      </div>
+    </template>
+  </div>
 </div>
+<script>
+  var tourneys = new Vue({
+    el: '#tournaments-list',
+    data: {
+      tournaments: []
+    },
+    created: function(){
+      var self = this;
+      $.getJSON("/getUpcoming", function(resp)
+				{
+					//self.message = resp;
+					var r = resp;
+					self.tournaments= r;
+				});
+    }
+  });
+</script>
