@@ -8,7 +8,19 @@
 module.exports = {
 
   attributes: {
-
+    platform: {
+      type: 'string',
+      isIn: ['PC','PS4','XB1'],
+      required: true
+    },
+    time: {
+      type: 'datetime',
+      required: true
+    },
+    maxTeams: {
+      type: 'number',
+      defaultsto: 32
+    }
   }
 };
 
