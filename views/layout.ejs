@@ -31,7 +31,15 @@
         <a href="#"><li class="menu-item item item-2">Leaderboards</li></a>
       </ul>
     </div>
-    <div class="login" id="loginBTN">Login</div>
+    <div class="right-buttons">
+      <% if(req.session.userName){ %>
+          <a href="#"><%= req.session.userName %></a>
+          <a href="/logout" class="second"><span class="tab">Logout</span></a>
+      <% }else{ %>
+        <div class="login" id="loginBTN">Login</div>
+      <% } %>
+      <!-- <div class="login" id="loginBTN">Login</div> -->
+    </div>
   </nav>
   <div class="login-modal-container" id="modal">
     <div class="modal-content">

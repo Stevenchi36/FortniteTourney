@@ -49,7 +49,6 @@ module.exports = {
                     if(resComp){
                         req.session.ID = resUser.id;
                         req.session.userName = resUser.username;
-                        console.log(resUser.id);
                         res.redirect('/');
                     }
                     else{
@@ -58,6 +57,14 @@ module.exports = {
                 });
             }
         });
-    }
+    },
+    // Logout and destroy session
+    logout: function(req, res){
+        req.session.destroy(function(err){
+            setTimeout(function(){
+                res.redirect('/');
+            }, 1000);
+        });
+    },
 };
 
