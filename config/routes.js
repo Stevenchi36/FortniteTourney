@@ -49,5 +49,8 @@ module.exports.routes = {
   '/addUser': 'UsersController.registerUser',
   '/loginUser': 'UsersController.loginUser',
   '/logout': 'UsersController.logout',
-  '/getUpcoming': 'TournamentsController.getUpcomingTournaments'
+  '/api/getUpcoming': 'TournamentsController.getUpcomingTournaments',
+  '/api/getUpcomingPS4': 'TournamentsController.getUpcomingPS4',
+  '/api/getUpcomingXB1': 'TournamentsController.getUpcomingXB1',
+  '/api/getUpcomingPC': 'TournamentsController.getUpcomingPC',
 };
