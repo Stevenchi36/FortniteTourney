@@ -182,3 +182,11 @@ img {
 .homepage .tournaments-list .tournament-container * {
     margin-bottom: 5px;
 }
+/* Admin Page */
+.admin-container form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 350px;
+}
