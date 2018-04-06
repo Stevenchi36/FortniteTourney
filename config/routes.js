@@ -49,6 +49,8 @@ module.exports.routes = {
   '/addUser': 'UsersController.registerUser',
   '/loginUser': 'UsersController.loginUser',
   '/logout': 'UsersController.logout',
+  // Admin
+  '/admin': { view: 'admin.ejs' },
   // API
   '/api/getUpcoming': 'TournamentsController.getUpcomingTournaments',
   '/api/getUpcomingPS4': 'TournamentsController.getUpcomingPS4',
