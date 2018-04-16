@@ -1,6 +1,6 @@
 <% title = "Admin Page" %>
 <div class="admin-container">
-    <form action="/newTournament" method="post">
+    <form action="/create/Tournament" method="post">
         <h1 class="title">Create New Tournament</h1>
         <select name="platform" id="platform-select">
             <option value="PS4">PS4</option>
@@ -15,5 +15,6 @@
             <option value="64">64</option>
             <option value="128">128</option>
         </select>
+        <input type="submit" value="Create Tournament">
     </form>
 </div>

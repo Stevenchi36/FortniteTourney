@@ -42,5 +42,20 @@ module.exports = {
             res.json(tournaments);
         })
     },
+    // Create a new Tournament from admin page
+    addNewTournament: function(req,res){
+        // var platform = req.body.platform;
+        // var dateTime = req.body.dateTime;
+        // var maxTeams = req.body.maxTeams;
+        // dateTime = new Date(dateTime);
+        Tournaments.create({platform:'PS4', time:'2018-04-11 04:30:00'}).exec(function(err){
+            if(err){
+                // console.log("ERROR " + platform);
+                res.send(500, 'Database Error');
+            }
+            // console.log(dateTime);
+            res.redirect('/admin');
+        });
+    }
 };
 

@@ -14,7 +14,7 @@ module.exports = {
       required: true
     },
     time: {
-      type: 'datetime',
+      type: 'string',
       required: true
     },
     maxTeams: {

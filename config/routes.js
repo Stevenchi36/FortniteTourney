@@ -51,6 +51,7 @@ module.exports.routes = {
   '/logout': 'UsersController.logout',
   // Admin
   '/admin': { view: 'admin' },
+  '/create/Tournament': 'TournamentsController.addNewTournament',
   // API
   '/api/getUpcoming': 'TournamentsController.getUpcomingTournaments',
   '/api/getUpcomingPS4': 'TournamentsController.getUpcomingPS4',
