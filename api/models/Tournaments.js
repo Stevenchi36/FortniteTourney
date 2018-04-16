@@ -15,7 +15,7 @@ module.exports = {
     },
     gameType: {
       type: 'string',
-      isIn: ['Solo', "Duo"]
+      isIn: ['Solo', 'Duo']
     },
     time: {
       type: 'string',
