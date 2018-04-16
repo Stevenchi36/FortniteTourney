@@ -13,6 +13,10 @@ module.exports = {
       isIn: ['PC','PS4','XB1'],
       required: true
     },
+    gameType: {
+      type: 'string',
+      isIn: ['Solo', "Duo"]
+    },
     time: {
       type: 'string',
       required: true
@@ -22,8 +26,8 @@ module.exports = {
       defaultsto: 32
     },
     completed: {
-      type: 'boolean',
-      defaultsto: false
+      type: 'string',
+      isIn: ['true', 'false','inProgress'],
     }
   }
 };
