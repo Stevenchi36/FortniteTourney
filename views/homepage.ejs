@@ -12,7 +12,8 @@
       <div class="tournament-container">
           <img src="http://via.placeholder.com/250x250/606060/ffffff">
           <h3 class="tournament-platform">{{ tournament.platform }}</h3>
-          <p class="tournament-date">{{ tournament.time }}</p>
+          <p class="tournament-date">{{ formatDate(tournament.time) }}</p>
+          <p class="tournament-time">{{ getTime(tournament.time) }}</p>
           <button class="view-tournament">View</button>
           <button class="join-tournament">Join</button>
       </div>
@@ -33,6 +34,22 @@
 					var r = resp;
 					self.tournaments= r;
 				});
+    },
+    methods: {
+      formatDate: function(date){
+        var r = new Date(date);
+        return((r.getMonth() + 1) + "/" + r.getDate() + "/" + r.getFullYear())
+      },
+      getTime: function(date){
+        var r = new Date(date);
+        var hours = r.getHours();
+        var ampm = "am";
+        if(hours > 12){
+          hours = hours - 12;
+          ampm = "pm";
+        }
+        return(hours + ":" + (r.getMinutes()<10?'0':'') + r.getMinutes() + ampm);
+      }
     }
   });
 </script>
