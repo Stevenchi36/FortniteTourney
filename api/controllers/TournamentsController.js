@@ -62,6 +62,17 @@ module.exports = {
             // console.log(dateTime);
             res.redirect('/admin');
         });
+    },
+    // View particular join tourname
+    joinTournamentView: function(req,res){
+        var tournamentID = req.params.tournamentID;
+        Tournaments.findOne({id:tournamentID}).exec(function(err, tournaments){
+            if(err){
+                res.send(500, 'Database Error');
+            }
+            // TODO: If tournament in progress or completed
+            res.view('join', {tournament:tournaments});
+        });
     }
 };
 

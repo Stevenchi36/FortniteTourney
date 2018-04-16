@@ -45,10 +45,12 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
+  // User Actions
   '/register': { view: 'register'},
   '/addUser': 'UsersController.registerUser',
   '/loginUser': 'UsersController.loginUser',
   '/logout': 'UsersController.logout',
+  '/join/Tournament/:tournamentID': 'TournamentsController.joinTournamentView',
   // Admin
   '/admin': { view: 'admin' },
   '/create/Tournament': 'TournamentsController.addNewTournament',
