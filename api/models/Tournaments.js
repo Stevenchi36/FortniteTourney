@@ -18,7 +18,7 @@ module.exports = {
       type: 'string',
     },
     maxTeams: {
-      type: 'number',
+      type: 'integer',
     },
     completed: {
       type: 'string',

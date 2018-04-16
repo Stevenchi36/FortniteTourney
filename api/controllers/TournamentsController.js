@@ -46,12 +46,17 @@ module.exports = {
     addNewTournament: function(req,res){
         var platform = req.body.platform;
         var dateTime = req.body.dateTime;
-        var maxTeams = req.body.maxTeams;
-        var gameType = req.body.gameType;
+        // dateTime = dateTime.toString();
         dateTime = new Date(dateTime);
-        Tournaments.create({platform:'PS4', time:'2018-04-11 04:30:00'}).exec(function(err){
+        var maxTeams = parseInt(req.body.maxTeams);
+        sails.log(typeof maxTeams);
+        var gameType = req.body.gameType;
+        completed = "false";
+        sails.log(platform + " " + dateTime + " " + maxTeams + " " + gameType + " " + completed);
+        Tournaments.create({platform:platform, gameType:gameType, time:dateTime, maxTeams:maxTeams, completed:completed}).exec(function(err){
+            sails.log("Made it");
             if(err){
-                // console.log("ERROR " + platform);
+                console.log("ERROR " + platform);
                 res.send(500, 'Database Error');
             }
             // console.log(dateTime);
