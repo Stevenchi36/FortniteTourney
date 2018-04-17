@@ -14,6 +14,9 @@
     <link rel="stylesheet" href="/styles/importer.css">
     <link rel="stylesheet" href="/styles/reset.css">
     <link rel="stylesheet" href="/styles/template.css">
+    <% if(typeof specificCSS !== 'undefined'){ %>
+    <link rel="stylesheet" href="/styles/<%= specificCSS %>">
+    <% } %>
   </head>
 
   <body>

@@ -52,7 +52,12 @@ module.exports.routes = {
   '/logout': 'UsersController.logout',
   '/join/Tournament/:tournamentID': 'TournamentsController.joinTournamentView',
   // Admin
-  '/admin': { view: 'admin' },
+  '/admin': {
+    view: 'admin',
+    locals: {
+      specificCSS: 'admin.css'
+    }
+  },
   '/create/Tournament': 'TournamentsController.addNewTournament',
   // API
   '/api/getUpcoming': 'TournamentsController.getUpcomingTournaments',

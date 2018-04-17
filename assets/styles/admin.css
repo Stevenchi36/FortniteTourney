@@ -1,0 +1,12 @@
+.admin-container form {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.admin-container form * {
+    margin-bottom: 10px;
+}
