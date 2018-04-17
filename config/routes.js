@@ -50,7 +50,9 @@ module.exports.routes = {
   '/addUser': 'UsersController.registerUser',
   '/loginUser': 'UsersController.loginUser',
   '/logout': 'UsersController.logout',
-  '/join/Tournament/:tournamentID': 'TournamentsController.joinTournamentView',
+  // Tournament Actions
+  '/join/Tournament/:tournamentID': 'TournamentsController.joinTournamentView', // Join's view page
+  '/createTeam/Tournament/:tournamentID':'TeamsController.createTeam', // Actually join tournament 
   // Admin
   '/admin': {
     view: 'admin',
