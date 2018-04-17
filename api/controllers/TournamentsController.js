@@ -43,16 +43,16 @@ module.exports = {
         })
     },
     // Create a new Tournament from admin page
+    // TODO: Sanitize and Validate
     addNewTournament: function(req,res){
+        // Retrieve paramenters from URL
         var platform = req.body.platform;
         var dateTime = req.body.dateTime;
-        // dateTime = dateTime.toString();
         dateTime = new Date(dateTime);
         var maxTeams = parseInt(req.body.maxTeams);
-        sails.log(typeof maxTeams);
         var gameType = req.body.gameType;
         completed = "false";
-        sails.log(platform + " " + dateTime + " " + maxTeams + " " + gameType + " " + completed);
+        // Create a new record for the tournament
         Tournaments.create({platform:platform, gameType:gameType, time:dateTime, maxTeams:maxTeams, completed:completed}).exec(function(err){
             sails.log("Made it");
             if(err){
