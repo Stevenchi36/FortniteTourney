@@ -14,8 +14,8 @@
           <h3 class="tournament-platform">{{ tournament.platform }}</h3>
           <p class="tournament-date">{{ formatDate(tournament.time) }}</p>
           <p class="tournament-time">{{ getTime(tournament.time) }}</p>
-          <a :href="'/join/tournament/' + tournament.id"><button class="view-tournament">View</button></a>
-          <button class="join-tournament">Join</button>
+          <button class="view-tournament">View</button>
+          <a :href="'/join/tournament/' + tournament.id"><button class="join-tournament">Join</button></a>
       </div>
     </template>
   </div>
