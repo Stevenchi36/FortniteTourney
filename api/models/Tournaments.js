@@ -22,6 +22,10 @@ module.exports = {
     },
     completed: {
       type: 'string',
+    },
+    teams: {
+      collection: 'teams',
+      via: 'tournament'
     }
   }
 };

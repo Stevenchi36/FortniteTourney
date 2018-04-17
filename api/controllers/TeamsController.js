@@ -6,6 +6,14 @@
  */
 
 module.exports = {
-	
+	createTeam: function(req,res){
+        var tournamentID = req.params.tournamentID
+        if(typeof req.session.userName == 'undefined'){
+            sails.log("It is undefined");
+        }
+        else{
+            sails.log(tournamentID);
+        }
+    }
 };
 

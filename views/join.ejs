@@ -5,7 +5,7 @@
         <p class="tournament-info">Gametype: <%= tournament.gameType %></p>
         <p class="tournament-info">Time: <%= tournament.time %></p>
         <!-- TODO: Add link to join tournament -->
-        <a href=""><button class="join-button">Join Tournament</button></a>
+        <a href="/createTeam/Tournament/<%= tournament.id %>"><button class="join-button">Join Tournament</button></a>
     <% // }else{ %>
       <h2>You must be logged in to join a tournament</h2>
     <% // } %>
