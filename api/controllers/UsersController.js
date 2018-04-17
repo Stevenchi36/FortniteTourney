@@ -7,6 +7,7 @@
 
 module.exports = {
     // Register users into DB
+    // TODO: Validate and sanitize
 	registerUser: function(req,res){
         // retrieve inputs
         var username = req.body.username;
@@ -32,6 +33,7 @@ module.exports = {
         });
     },
     // Login and create session variable
+    // TODO: Validate and Sanitize
     loginUser: function(req,res){
         // Retrieve inputs
         var username = req.body.username;
