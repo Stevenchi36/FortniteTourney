@@ -1,0 +1,9 @@
+.join-container {
+    padding: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.join-container * {
+    margin-bottom: 20px;
+}

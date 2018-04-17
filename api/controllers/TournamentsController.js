@@ -71,7 +71,7 @@ module.exports = {
                 res.send(500, 'Database Error');
             }
             // TODO: If tournament in progress or completed
-            res.view('join', {tournament:tournaments});
+            res.view('join', {tournament:tournaments, specificCSS:'join.css'});
         });
     }
 };

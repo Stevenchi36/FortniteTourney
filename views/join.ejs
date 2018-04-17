@@ -1,9 +1,9 @@
 <div class="join-container">
     <% // if(req.session.userName){ %>
         <h2>Join Tournament</h2>
-        <p class="s"><%= tournament.platform %></p>
-        <p class="s"><%= tournament.time %></p>
-        <p class="s"><%= tournament.gameType %></p>
+        <p class="tournament-info">Platform: <%= tournament.platform %></p>
+        <p class="tournament-info">Gametype: <%= tournament.gameType %></p>
+        <p class="tournament-info">Time: <%= tournament.time %></p>
         <!-- TODO: Add link to join tournament -->
         <a href=""><button class="join-button">Join Tournament</button></a>
     <% // }else{ %>
