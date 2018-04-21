@@ -1,0 +1,11 @@
+<div class="homepage">
+  <div class="header">
+  <% if(typeof user !== 'undefined'){ %>
+    <h1><%= user.username %></h1>
+  <% }else{ %>
+    <h1>User doesn't exist</h1>
+  <% } %>
+  </div>
+</div>
+<div class="user-container">
+</div>
