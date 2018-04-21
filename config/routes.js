@@ -53,6 +53,7 @@ module.exports.routes = {
   // Tournament Actions
   '/join/Tournament/:tournamentID': 'TournamentsController.joinTournamentView', // Join's view page
   '/createTeam/Tournament/:tournamentID':'TeamsController.createTeam', // Actually join tournament 
+  '/view/Tournament/:tournamentID':'TournamentsController.viewTournament',
   // Admin
   '/admin': {
     view: 'admin',
