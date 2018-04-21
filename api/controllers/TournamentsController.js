@@ -63,7 +63,7 @@ module.exports = {
             res.redirect('/admin');
         });
     },
-    // View particular join tourname
+    // View particular join tournament
     joinTournamentView: function(req,res){
         var tournamentID = req.params.tournamentID;
         Tournaments.findOne({id:tournamentID}).exec(function(err, tournaments){
@@ -72,6 +72,17 @@ module.exports = {
             }
             // TODO: If tournament in progress or completed
             res.view('join', {tournament:tournaments, specificCSS:'join.css'});
+        });
+    },
+
+    viewTournament: function(req, res){
+        var tournamentID = req.params.tournamentID;
+        Tournaments.findOne({id:tournamentID}).populate('teams').exec(function(err, teams){
+            if(err){
+                res.send(500, 'Database Error');
+            }
+            // res.json(teams);
+            res.view('tournament', {teams:teams});
         });
     }
 };
