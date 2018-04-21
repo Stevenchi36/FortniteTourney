@@ -73,11 +73,8 @@ module.exports = {
         var username = req.params.username;
         Users.findOne({username:username}).exec(function(err, user){
             if(err){
-                sails.log("Not found");
                 res.send(500, 'Database Error');
             }
-            sails.log("Found");
-            sails.log(user);
             res.view('user', {user:user, username:username});
         });
     }

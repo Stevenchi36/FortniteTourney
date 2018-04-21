@@ -8,4 +8,15 @@
   </div>
 </div>
 <div class="user-container">
+  <% if(typeof user !== 'undefined'){ %>
+    <% if(user.pc !== null){ %>
+      <p class="username">PC: <%= user.pc %></p>
+    <% } %>
+    <% if(user.ps4 !== null){ %>
+      <p class="username">PS4: <%= user.ps4 %></p>
+    <% } %>
+    <% if(user.xb1 !== null){ %>
+      <p class="username">PS4: <%= user.xb1 %></p>
+    <% } %>
+  <% } %>
 </div>
