@@ -1,9 +1,30 @@
+<%
+    // Format Date and time functions
+    function formatDate(date){
+        var r = new Date(date);
+        return((r.getMonth() + 1) + "/" + r.getDate() + "/" + r.getFullYear())
+    }
+
+    function formatTime(date){
+        var r = new Date(date);
+        var hours = r.getHours();
+        var ampm = "am";
+        if(hours > 12){
+          hours = hours - 12;
+          ampm = "pm";
+        }
+        return(hours + ":" + (r.getMinutes()<10?'0':'') + r.getMinutes() + ampm)
+      }
+
+%>
+
 <div class="join-container">
     <% // if(req.session.userName){ %>
         <h2>Join Tournament</h2>
         <p class="tournament-info">Platform: <%= tournament.platform %></p>
         <p class="tournament-info">Gametype: <%= tournament.gameType %></p>
-        <p class="tournament-info">Time: <%= tournament.time %></p>
+        <p class="tournament-info">Date: <%= formatDate(tournament.time) %></p>
+        <p class="tournament-info">Time: <%= formatTime(tournament.time) %></p>
         <!-- TODO: Add link to join tournament -->
         <a href="/createTeam/Tournament/<%= tournament.id %>"><button class="join-button">Join Tournament</button></a>
     <% // }else{ %>

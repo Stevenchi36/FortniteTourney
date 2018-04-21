@@ -11,7 +11,7 @@
     <template v-for="tournament in tournaments">
       <div class="tournament-container">
           <img src="http://via.placeholder.com/250x250/606060/ffffff">
-          <h3 class="tournament-platform">{{ tournament.platform }}</h3>
+          <h3 class="tournament-platform">{{ tournament.platform }} - {{ tournament.gameType }}</h3>
           <p class="tournament-date">{{ formatDate(tournament.time) }}</p>
           <p class="tournament-time">{{ getTime(tournament.time) }}</p>
           <button class="view-tournament">View</button>
