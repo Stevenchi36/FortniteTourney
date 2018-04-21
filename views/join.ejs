@@ -2,7 +2,7 @@
     // Format Date and time functions
     function formatDate(date){
         var r = new Date(date);
-        return((r.getMonth() + 1) + "/" + r.getDate() + "/" + r.getFullYear())
+        return((r.getMonth() + 1) + "/" + r.getDate() + "/" + r.getFullYear());
     }
 
     function formatTime(date){
@@ -13,7 +13,7 @@
           hours = hours - 12;
           ampm = "pm";
         }
-        return(hours + ":" + (r.getMinutes()<10?'0':'') + r.getMinutes() + ampm)
+        return(hours + ":" + (r.getMinutes()<10?'0':'') + r.getMinutes() + ampm);
       }
 
 %>
