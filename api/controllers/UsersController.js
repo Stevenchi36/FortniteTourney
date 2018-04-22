@@ -84,7 +84,7 @@ module.exports = {
             if(err){
                 res.send(500, 'Databases Error');
             }
-            res.view('leaderboard', {users:users});
+            res.view('leaderboard', {users:users, specificCSS:'leaderboard.css'});
         });
     }
 };

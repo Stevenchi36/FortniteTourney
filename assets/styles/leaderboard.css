@@ -1,0 +1,28 @@
+.leaderboard-container {
+    padding: 20px;
+}
+.leaderboard-container h1 {
+    text-align: center;
+}
+.leaderboard-container table {
+    margin: 20px auto;
+    width: 50%;
+}
+.leaderboard-container td {
+    padding: 2px 10px;
+}
+.leaderboard-container .user-score, .leaderboard-container .username {
+    text-align: center;
+}
+.leaderboard-container tr:nth-child(odd) {
+    background-color: rgb(223, 223, 223);
+}
+.leaderboard-container table .table-header {
+    font-weight: 700;
+    background-color: rgb(165, 165, 165);
+    font-size: 20px;
+    text-align: center;
+}
+.leaderboard-container table .table-header .header-cell {
+    padding: 4px 10px;
+}
