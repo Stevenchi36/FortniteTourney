@@ -63,7 +63,7 @@ module.exports = {
             res.redirect('/admin');
         });
     },
-    // View particular join tournament
+    // Join Tournament View
     joinTournamentView: function(req,res){
         var tournamentID = req.params.tournamentID;
         Tournaments.findOne({id:tournamentID}).exec(function(err, tournaments){
@@ -74,7 +74,7 @@ module.exports = {
             res.view('join', {tournament:tournaments, specificCSS:'join.css'});
         });
     },
-
+    // View the actual tournament participants/bracket
     viewTournament: function(req, res){
         var tournamentID = req.params.tournamentID;
         Tournaments.findOne({id:tournamentID}).populate('teams').exec(function(err, teams){
