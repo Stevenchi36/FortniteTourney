@@ -77,6 +77,15 @@ module.exports = {
             }
             res.view('user', {user:user, username:username});
         });
+    },
+    // View Leaderboard
+    viewLeaderboard: function(req, res){
+        Users.find({sort:'points DESC'}).exec(function(err, users){
+            if(err){
+                res.send(500, 'Databases Error');
+            }
+            res.view('leaderboard', {users:users});
+        });
     }
 };
 

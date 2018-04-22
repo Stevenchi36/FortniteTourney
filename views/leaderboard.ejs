@@ -1,0 +1,10 @@
+<div class="leaderboard-container">
+  <table>
+    <% users.forEach(function(user){ %>
+      <tr>
+        <td class=""><%= user.username %></td>
+        <td class=""><%= user.points %></td>
+      </tr>
+    <% }) %>
+  </table>
+</div>
