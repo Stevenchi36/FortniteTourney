@@ -46,7 +46,12 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
   // User Actions
-  '/register': { view: 'register'}, // Register View
+  '/register': { 
+    view: 'register',
+    locals: {
+      specificCSS: 'register.css'
+    }
+  }, // Register View
   '/addUser': 'UsersController.registerUser', // Register User action
   '/loginUser': 'UsersController.loginUser', // Login
   '/logout': 'UsersController.logout', // Logout
