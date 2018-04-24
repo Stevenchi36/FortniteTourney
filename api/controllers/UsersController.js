@@ -75,7 +75,7 @@ module.exports = {
             if(err){
                 res.send(500, 'Database Error');
             }
-            res.view('user', {user:user, username:username});
+            res.view('user', {user:user, username:username, specificCSS:'userProfile.css'});
         });
     },
     // View Leaderboard
@@ -90,7 +90,7 @@ module.exports = {
     // View Settings
     userSettingsView: function(req, res){
         Users.findOne({id:req.session.ID}).exec(function(err, user){
-            res.view("userSettings", {user:user});
+            res.view("userSettings", {user:user, specificCSS:'userSettings.css'});
         });
     },
     updateSettings: function(req, res){
