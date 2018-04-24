@@ -83,7 +83,7 @@ module.exports = {
                 res.send(500, 'Database Error');
             }
             // res.json(teams);
-            res.view('tournament', {teams:teams});
+            res.view('tournament', {teams:teams, specificCSS: 'tournamentView.css'});
         });
     }
 };
