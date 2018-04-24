@@ -99,6 +99,7 @@ module.exports = {
         var platform = req.body.platform;
         var userID = req.session.ID;
         sails.log(gamertag + " " + platform + " " + userID);
+        // Update if XB1
         if(platform == "xb1"){
             sails.log("xb1");
             Users.update({id:userID},{xb1:gamertag}).exec(function(err){
@@ -108,6 +109,7 @@ module.exports = {
                 res.redirect('/user/settings');
             });
         }
+        // Update if PS4
         else if(platform == "ps4"){
             sails.log("xb1");
             Users.update({id:userID},{ps4:gamertag}).exec(function(err){
@@ -117,6 +119,7 @@ module.exports = {
                 res.redirect('/user/settings');
             });
         }
+        // Update if PC
         else if(platform == "pc"){
             sails.log("xb1");
             Users.update({id:userID},{pc:gamertag}).exec(function(err){
