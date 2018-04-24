@@ -1,7 +1,7 @@
 <div class="homepage">
   <div class="header">
   <% if(typeof user !== 'undefined'){ %>
-    <h1><%= user.username %></h1>
+    <h1><%= user.username %> (<%= user.points %> points)</h1>
   <% }else{ %>
     <h1>User doesn't exist</h1>
   <% } %>
