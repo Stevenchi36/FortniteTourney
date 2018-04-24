@@ -1,0 +1,24 @@
+<div class="settings container">
+  <h1>Connected Accounts</h1>
+  <% if(typeof user !== 'undefined'){ %>
+    <% if(user.pc !== null){ %>
+      <p class="username">PC: <%= user.pc %></p>
+    <% } %>
+    <% if(user.ps4 !== null){ %>
+      <p class="username">PS4: <%= user.ps4 %></p>
+    <% } %>
+    <% if(user.xb1 !== null){ %>
+      <p class="username">XB1: <%= user.xb1 %></p>
+    <% } %>
+  <% } %>
+  <h2>Update/Create Connections</h2>
+  <form action="/update/settings" method="POST" class="connections-form">
+    <select name="platform" id="platform-select">
+      <option value="ps4">PS4</option>
+      <option value="xb1">XB1</option>
+      <option value="pc">PC</option>
+    </select>
+    <input type="text" name="gamertag" id="gamertag">
+    <input type="submit" value="Update Gamertag">
+  </form>
+</div>

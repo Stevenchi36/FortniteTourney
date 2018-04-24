@@ -38,7 +38,7 @@
     </div>
     <div class="right-buttons">
       <% if(req.session.userName){ %>
-          <a href="#"><%= req.session.userName %></a>
+          <a href="/user/settings"><%= req.session.userName %></a>
           <a href="/logout" class="second"><span class="tab">Logout</span></a>
       <% }else{ %>
         <div class="login" id="loginBTN">Login</div>

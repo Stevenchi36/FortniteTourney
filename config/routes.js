@@ -46,27 +46,29 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
   // User Actions
-  '/register': { view: 'register'},
-  '/addUser': 'UsersController.registerUser',
-  '/loginUser': 'UsersController.loginUser',
-  '/logout': 'UsersController.logout',
-  '/user/:username': 'UsersController.viewUser',
-  '/leaderboard': 'UsersController.viewLeaderboard',
+  '/register': { view: 'register'}, // Register View
+  '/addUser': 'UsersController.registerUser', // Register User action
+  '/loginUser': 'UsersController.loginUser', // Login
+  '/logout': 'UsersController.logout', // Logout
+  '/user/settings': 'UsersController.userSettingsView', // User Settings View
+  '/update/settings':'UsersController.updateSettings', // Update User Settings
+  '/user/:username': 'UsersController.viewUser', // User profile
+  '/leaderboard': 'UsersController.viewLeaderboard', // Leaderboard
   // Tournament Actions
   '/join/Tournament/:tournamentID': 'TournamentsController.joinTournamentView', // Join's view page
   '/createTeam/Tournament/:tournamentID':'TeamsController.createTeam', // Actually join tournament 
-  '/view/Tournament/:tournamentID':'TournamentsController.viewTournament',
+  '/view/Tournament/:tournamentID':'TournamentsController.viewTournament', // View Tournament
   // Admin
   '/admin': {
     view: 'admin',
     locals: {
       specificCSS: 'admin.css'
     }
-  },
-  '/create/Tournament': 'TournamentsController.addNewTournament',
+  }, // New Tournament View
+  '/create/Tournament': 'TournamentsController.addNewTournament', // Create Tournament Action
   // API
-  '/api/getUpcoming': 'TournamentsController.getUpcomingTournaments',
-  '/api/getUpcomingPS4': 'TournamentsController.getUpcomingPS4',
-  '/api/getUpcomingXB1': 'TournamentsController.getUpcomingXB1',
-  '/api/getUpcomingPC': 'TournamentsController.getUpcomingPC',
+  '/api/getUpcoming': 'TournamentsController.getUpcomingTournaments', // Return JSON of all tournaments
+  '/api/getUpcomingPS4': 'TournamentsController.getUpcomingPS4', // Return JSON of PS4 tournaments
+  '/api/getUpcomingXB1': 'TournamentsController.getUpcomingXB1', // Return JSON of XB1 tournaments
+  '/api/getUpcomingPC': 'TournamentsController.getUpcomingPC', // Return JSON of PC tournaments
 };

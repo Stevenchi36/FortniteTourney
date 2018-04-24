@@ -86,6 +86,50 @@ module.exports = {
             }
             res.view('leaderboard', {users:users, specificCSS:'leaderboard.css'});
         });
+    },
+    // View Settings
+    userSettingsView: function(req, res){
+        Users.findOne({id:req.session.ID}).exec(function(err, user){
+            res.view("userSettings", {user:user});
+        });
+    },
+    updateSettings: function(req, res){
+        // Retrieve form info
+        var gamertag = req.body.gamertag;
+        var platform = req.body.platform;
+        var userID = req.session.ID;
+        sails.log(gamertag + " " + platform + " " + userID);
+        if(platform == "xb1"){
+            sails.log("xb1");
+            Users.update({id:userID},{xb1:gamertag}).exec(function(err){
+                if(err){
+                    res.send(500, 'Database Error');
+                }
+                res.redirect('/user/settings');
+            });
+        }
+        else if(platform == "ps4"){
+            sails.log("xb1");
+            Users.update({id:userID},{ps4:gamertag}).exec(function(err){
+                if(err){
+                    res.send(500, 'Database Error');
+                }
+                res.redirect('/user/settings');
+            });
+        }
+        else if(platform == "pc"){
+            sails.log("xb1");
+            Users.update({id:userID},{pc:gamertag}).exec(function(err){
+                if(err){
+                    res.send(500, 'Database Error');
+                }
+                res.redirect('/user/settings');
+            });
+        }
+        else {
+            res.redirect('/user/settings');
+        }
+        // Users.update({id:req.session.ID}).set({platform:gamertag});
     }
 };
 
